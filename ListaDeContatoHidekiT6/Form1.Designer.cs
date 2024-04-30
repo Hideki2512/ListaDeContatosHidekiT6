@@ -105,10 +105,12 @@
             // 
             // listBoxContatos
             // 
+            this.listBoxContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxContatos.FormattingEnabled = true;
-            this.listBoxContatos.Location = new System.Drawing.Point(546, 32);
+            this.listBoxContatos.ItemHeight = 25;
+            this.listBoxContatos.Location = new System.Drawing.Point(485, 32);
             this.listBoxContatos.Name = "listBoxContatos";
-            this.listBoxContatos.Size = new System.Drawing.Size(229, 394);
+            this.listBoxContatos.Size = new System.Drawing.Size(290, 379);
             this.listBoxContatos.TabIndex = 7;
             // 
             // Form1
