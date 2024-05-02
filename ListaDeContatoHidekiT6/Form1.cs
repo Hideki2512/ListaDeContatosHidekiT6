@@ -45,6 +45,32 @@ namespace ListaDeContatoHidekiT6
             StreamReader ler = new StreamReader("Contatos.txt");
 
             listaDeContatos = new Contato[Convert.ToInt32(ler.ReadLine())];
+
+            for (int x = 0; x < listaDeContatos.Length; x++)
+            {
+                listaDeContatos[x] = new Contato();
+                listaDeContatos[x].Nome = ler.ReadLine();
+                listaDeContatos[x].Sobrenome = ler.ReadLine();
+                listaDeContatos[x].Telefone = ler.ReadLine();
+            }
+            ler.Close();
+        }
+
+        private void Exibir()
+        {
+            listBoxContatos.Items.Clear();
+
+            for (int x = 0; x < listaDeContatos.Length; x++)
+            {
+                listBoxContatos.Items.Add(listaDeContatos[x].ToString());
+            }
+        }
+
+        private void LimparCampos()
+        {
+            textBoxNome.Text = String.Empty;
+            textBoxSobrenome.Text = String.Empty;
+            textBoxTelefone.Text = String.Empty;
         }
 
         private void buttonIncluirContato_Click(object sender, EventArgs e)
@@ -56,6 +82,17 @@ namespace ListaDeContatoHidekiT6
             contato.Telefone = textBoxTelefone.Text;
 
             listBoxContatos.Items.Add(contato.ToString());
+
+            Escrever(contato);
+            Ler();
+            Exibir();
+            LimparCampos();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Ler();
+            Exibir();
         }
     }
 }
